@@ -516,6 +516,9 @@ spec:
           {{- if .Values.diagnosticMode.enabled }}
           command: {{- include "common.tplvalues.render" (dict "value" .Values.diagnosticMode.command "context" $) | nindent 12 }}
           args: {{- include "common.tplvalues.render" (dict "value" .Values.diagnosticMode.args "context" $) | nindent 12 }}
+          {{- else if .Values.primary.args }}
+          args: {{- include "common.tplvalues.render" (dict "value" .Values.metrics.args "context" $) | nindent 12 }}
+          {{- end }}
           {{- else if .Values.metrics.customMetrics }}
           args: ["--extend.query-path", "/conf/custom-metrics.yaml"]
           {{- end }}

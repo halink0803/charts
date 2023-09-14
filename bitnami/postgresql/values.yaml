@@ -1259,6 +1259,12 @@ metrics:
   ##           description: "Size of the database in bytes"
   ##
   customMetrics: {}
+  ## @param metrics.extendedFlags 
+  ## see: https://github.com/prometheus-community/postgres_exporter#flags
+  ## For example:
+  ## extendedFlags:
+  ## - 
+  extendedFlags: []
   ## @param metrics.extraEnvVars Extra environment variables to add to PostgreSQL Prometheus exporter
   ## see: https://github.com/wrouesnel/postgres_exporter#environment-variables
   ## For example:
